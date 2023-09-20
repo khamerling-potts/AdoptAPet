@@ -1,0 +1,26 @@
+#header {
+  text-align: center;
+  border: 2px solid black;
+}
+#pets-container {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
+  justify-content: space-evenly; /*centers listings horizontally within pets container by creating equal space between them. DONT USE GAPS W THIS*/
+  justify-items: center; /*centers pet info horizontally within listing*/
+  align-content: space-evenly;
+  align-items: center; /*centers listings vertically within pets container*/
+}
+.pet-listing {
+  text-align: center;
+  border: grey solid 1px;
+  /* padding: 1rem;
+  width: 15rem;
+  height: 25rem; */
+  /* display: inline-grid; */
+  /* margin: 1rem 2rem; */
+  box-shadow: 3px 4px #e04b52;
+}
+img {
+  max-width: 60%;
+}

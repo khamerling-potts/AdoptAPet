@@ -1,6 +1,5 @@
 import { API_KEY } from "/config.js";
 import { SECRET } from "/config.js";
-console.log(SECRET);
 
 function fetchAccessToken() {
   return fetch("https://api.petfinder.com/v2/oauth2/token", {
