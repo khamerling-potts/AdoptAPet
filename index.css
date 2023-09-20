@@ -18,9 +18,12 @@
   width: 15rem;
   height: 25rem; */
   /* display: inline-grid; */
-  /* margin: 1rem 2rem; */
+  margin: 1rem 2rem;
   box-shadow: 3px 4px #e04b52;
 }
 img {
   max-width: 60%;
+}
+details {
+  margin: 1em 0px; /*default <p> margins*/
 }
