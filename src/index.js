@@ -3,6 +3,8 @@ import { SECRET } from "/config.js";
 let offset = 1;
 const searchbar = document.getElementById("zip");
 const pageCount = document.getElementById("page");
+const toggleBtn = document.getElementById("toggle-saved");
+const petsContainer = document.getElementById("pets-container");
 
 //When user submits zip code, animals are fetched using that zip code
 document
@@ -20,6 +22,9 @@ document
 document
   .getElementById("forward")
   .addEventListener("click", (event) => loadNext(event));
+
+//event listener for toggling saved vs all animals
+toggleBtn.addEventListener("click", toggleSaved);
 
 //gets the temporary access token every time you request animals, then actually fetches animals
 function fetchAccessToken(event, zip) {
@@ -62,7 +67,7 @@ function fetchAnimals(event, token, zip) {
         }
       } else {
         //clear current page before rendering new animals
-        document.getElementById("pets-container").innerHTML = "";
+        petsContainer.innerHTML = "";
         data.animals.forEach(renderPet);
         pageCount.innerText = `Page: ${offset}`;
       }
@@ -76,6 +81,20 @@ function renderPet(animal) {
   const listing = document.createElement("div");
   listing.className = "pet-listing";
 
+  const imgdiv = document.createElement("div");
+  imgdiv.className = "imgdiv";
+  const image = document.createElement("img");
+  /*checking the different possible image formats, depending on if it's a saved animal, api animal w/ photos, or api animal w/o photos*/
+  if (animal.imageURL) {
+    image.src = animal.imageURL;
+  } else if (animal.photos.length > 0) {
+    image.src = animal.photos[0].large;
+  } else {
+    image.src =
+      "https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227724992-stock-illustration-image-available-icon-flat-vector.jpg";
+  }
+  imgdiv.appendChild(image);
+
   const name = document.createElement("h2");
   name.innerText = animal.name;
 
@@ -84,18 +103,9 @@ function renderPet(animal) {
   distance.innerText = `${animal.distance} miles`;
   const heart = document.createElement("span");
   heart.innerText = `Save Pet`; //change to heart
+  //event listener for saving an animal
+  heart.addEventListener("click", (event) => savePet(event, animal, image));
   pTop.append(distance, heart);
-
-  const imgdiv = document.createElement("div");
-  imgdiv.className = "imgdiv";
-  const image = document.createElement("img");
-  if (animal.photos.length > 0) {
-    image.src = animal.photos[0].large;
-  } else {
-    image.src =
-      "https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227724992-stock-illustration-image-available-icon-flat-vector.jpg";
-  }
-  imgdiv.appendChild(image);
 
   const pBottom = document.createElement("p");
   const age = document.createElement("span");
@@ -148,4 +158,52 @@ function loadPrevious(event) {
 function loadNext(event) {
   offset++;
   fetchAccessToken(event, searchbar.value);
+}
+
+function savePet(event, animal, image) {
+  console.log("savedpet triggered");
+  const savedAnimal = {
+    id: animal.id,
+    name: animal.name,
+    distance: animal.distance,
+    imageURL: image.src,
+    age: animal.age,
+    gender: animal.gender,
+    breeds: { primary: animal.breeds.primary },
+    species: animal.species,
+    url: animal.url,
+    description: animal.description,
+  };
+  const configObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(savedAnimal),
+  };
+  fetch(`http://localhost:3000/savedanimals`, configObj)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
+
+function toggleSaved(event) {
+  //clear page before switching animals
+  petsContainer.innerHTML = "";
+  if (toggleBtn.className === "all") {
+    toggleBtn.className = "saved";
+    toggleBtn.innerText = "Return to Results";
+    //hide footer bar when on saved animals (not implementing page functionality for db.json yet)
+    document.getElementById("footer").style.visibility = "hidden";
+    fetch(`http://localhost:3000/savedanimals`)
+      .then((res) => res.json())
+      .then((animals) => {
+        animals.forEach(renderPet);
+      });
+  } else {
+    toggleBtn.className = "all";
+    toggleBtn.innerText = "See Saved Animals";
+    document.getElementById("footer").style.visibility = "visible";
+    fetchAccessToken(event, searchbar.value);
+  }
 }

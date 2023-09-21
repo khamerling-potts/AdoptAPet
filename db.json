@@ -1,0 +1,32 @@
+{
+  "savedAnimals": [
+    {
+      "id": 68981852,
+      "name": "Snuggle Muffin - Coming Soon",
+      "distance": 7.0167,
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68981852/1/?bust=1695330207&width=600",
+      "age": "Adult",
+      "gender": "Female",
+      "breeds": {
+        "primary": "Domestic Medium Hair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/snuggle-muffin-coming-soon-68981852/va/arlington/home-alone-feline-rescue-va219/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Snuggle Muffin lives up to her name. Found as a stray, she was microchipped but her family could not be..."
+    },
+    {
+      "id": 68978989,
+      "name": "Chevy",
+      "distance": 3.2591,
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68978989/1/?bust=1695320786&width=600",
+      "age": "Adult",
+      "gender": "Male",
+      "breeds": {
+        "primary": "Domestic Medium Hair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/chevy-68978989/dc/washington/humane-rescue-alliance-dc28/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Chevy and Chase are bonded and need to be adopted together but only pay one adoption fee!\n\nCome and meet..."
+    }
+  ]
+}
