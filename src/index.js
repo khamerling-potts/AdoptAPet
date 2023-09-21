@@ -4,8 +4,6 @@ let offset = 1;
 const searchbar = document.getElementById("zip");
 const pageCount = document.getElementById("page");
 
-// fetchAccessToken(99801);
-
 //When user submits zip code, animals are fetched using that zip code
 document
   .getElementById("search-animals")
