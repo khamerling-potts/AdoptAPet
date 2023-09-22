@@ -20,6 +20,7 @@ document
   .addEventListener("submit", (event) => {
     event.preventDefault();
     const zip = searchbar.value;
+    offset = 1;
     fetchAccessToken(event, zip);
   });
 
@@ -277,9 +278,6 @@ function toggleSaved(event) {
         animals.forEach((animal) => renderPet(animal, null));
       });
   } else {
-    toggleBtn.className = "all";
-    toggleBtn.innerText = "See Saved Animals";
-    footer.style.visibility = "visible";
     fetchAccessToken(event, searchbar.value);
   }
 }
