@@ -3,6 +3,7 @@
   border: 2px solid black;
 }
 #footer {
+  visibility: hidden;
   border: 2px solid black;
   height: 5vw;
   text-align: center;

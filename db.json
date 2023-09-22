@@ -27,6 +27,48 @@
       "species": "Cat",
       "url": "https://www.petfinder.com/cat/chevy-68978989/dc/washington/humane-rescue-alliance-dc28/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
       "description": "Chevy and Chase are bonded and need to be adopted together but only pay one adoption fee!\n\nCome and meet..."
+    },
+    {
+      "id": 68981875,
+      "name": "Amigo",
+      "distance": 4.724,
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68981875/1/?bust=1695331539&width=600",
+      "age": "Adult",
+      "gender": "Male",
+      "breeds": {
+        "primary": "American Bulldog"
+      },
+      "species": "Dog",
+      "url": "https://www.petfinder.com/dog/amigo-68981875/dc/washington/humane-rescue-alliance-foster-homes-dc03/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "I&amp;#39;m in a FOSTER HOME! If you want to meet me, email my foster parent at hrafoster.demming@gmail.com to set up..."
+    },
+    {
+      "id": 68980341,
+      "name": "Artemis",
+      "distance": 3.861,
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68980341/1/?bust=1695325145&width=600",
+      "age": "Baby",
+      "gender": "Female",
+      "breeds": {
+        "primary": "American Shorthair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/artemis-68980341/va/arlington/spca-of-northern-virginia-va91/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Artemis&amp;#39;s Personality\n\nThis adorable calico girl was named after the goddess Artemis in Greek mythology. As a goddess, she is..."
+    },
+    {
+      "id": 68980976,
+      "name": "Star Fire",
+      "distance": 3.2591,
+      "imageURL": "https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227724992-stock-illustration-image-available-icon-flat-vector.jpg",
+      "age": "Adult",
+      "gender": "Female",
+      "breeds": {
+        "primary": "Pit Bull Terrier"
+      },
+      "species": "Dog",
+      "url": "https://www.petfinder.com/dog/star-fire-68980976/dc/washington/humane-rescue-alliance-dc28/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "I&amp;#39;m at our Oglethorpe Street shelter! If you want to adopt me, come to 71 Oglethorpe St. NW between 12-7..."
     }
   ]
 }

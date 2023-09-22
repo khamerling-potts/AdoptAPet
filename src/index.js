@@ -5,6 +5,8 @@ const searchbar = document.getElementById("zip");
 const pageCount = document.getElementById("page");
 const toggleBtn = document.getElementById("toggle-saved");
 const petsContainer = document.getElementById("pets-container");
+const footer = document.getElementById("footer");
+const intro = document.getElementById("intro");
 
 //When user submits zip code, animals are fetched using that zip code
 document
@@ -25,6 +27,15 @@ document
 
 //event listener for toggling saved vs all animals
 toggleBtn.addEventListener("click", toggleSaved);
+
+//function that initially prompts for zip code and fetches animals
+// function initialPrompt() {
+//   const firstZip = prompt(
+//     "Please enter your zip code to start viewing adoptable pets:"
+//   );
+//   searchbar.value = firstZip;
+//   fetchAccessToken(null, firstZip);
+// }
 
 //gets the temporary access token every time you request animals, then actually fetches animals
 function fetchAccessToken(event, zip) {
@@ -55,8 +66,9 @@ function fetchAnimals(event, token, zip) {
       console.log(data.animals);
 
       if (data.animals.length === 0) {
-        /*if our search returned no animals, tell user to try different zip*/
-        if (event.type === "submit") {
+        /*If our search/initial prompt returned no animals, tell user to try different zip.
+        event being null means that this was the initial prompt (where there's no event). Treat this like submit*/
+        if (!event || event.type === "submit") {
           alert("No animals for this location. Please try another zip code.");
         } else if (event.target.id === "forward") {
           /*if we reached the end of the available animals, return to last seen page of results*/
@@ -75,6 +87,8 @@ function fetchAnimals(event, token, zip) {
   // .catch((error) => {
   //   console.log(error);
   // });
+  footer.style.visibility = "visible";
+  intro.innerText = "Results";
 }
 
 function renderPet(animal) {
@@ -193,8 +207,9 @@ function toggleSaved(event) {
   if (toggleBtn.className === "all") {
     toggleBtn.className = "saved";
     toggleBtn.innerText = "Return to Results";
+    intro.innerText = "Saved Animals";
     //hide footer bar when on saved animals (not implementing page functionality for db.json yet)
-    document.getElementById("footer").style.visibility = "hidden";
+    footer.style.visibility = "hidden";
     fetch(`http://localhost:3000/savedanimals`)
       .then((res) => res.json())
       .then((animals) => {
@@ -203,7 +218,7 @@ function toggleSaved(event) {
   } else {
     toggleBtn.className = "all";
     toggleBtn.innerText = "See Saved Animals";
-    document.getElementById("footer").style.visibility = "visible";
+    footer.style.visibility = "visible";
     fetchAccessToken(event, searchbar.value);
   }
 }
