@@ -1,130 +1,46 @@
 {
   "savedAnimals": [
     {
-      "id": 68981852,
-      "name": "Snuggle Muffin - Coming Soon",
-      "distance": 7.0167,
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68981852/1/?bust=1695330207&width=600",
-      "age": "Adult",
-      "gender": "Female",
-      "breeds": {
-        "primary": "Domestic Medium Hair"
-      },
-      "species": "Cat",
-      "url": "https://www.petfinder.com/cat/snuggle-muffin-coming-soon-68981852/va/arlington/home-alone-feline-rescue-va219/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Snuggle Muffin lives up to her name. Found as a stray, she was microchipped but her family could not be..."
-    },
-    {
-      "id": 68978989,
-      "name": "Chevy",
-      "distance": 3.2591,
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68978989/1/?bust=1695320786&width=600",
-      "age": "Adult",
-      "gender": "Male",
-      "breeds": {
-        "primary": "Domestic Medium Hair"
-      },
-      "species": "Cat",
-      "url": "https://www.petfinder.com/cat/chevy-68978989/dc/washington/humane-rescue-alliance-dc28/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Chevy and Chase are bonded and need to be adopted together but only pay one adoption fee!\n\nCome and meet..."
-    },
-    {
-      "id": 68981875,
-      "name": "Amigo",
-      "distance": 4.724,
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68981875/1/?bust=1695331539&width=600",
-      "age": "Adult",
-      "gender": "Male",
-      "breeds": {
-        "primary": "American Bulldog"
-      },
-      "species": "Dog",
-      "url": "https://www.petfinder.com/dog/amigo-68981875/dc/washington/humane-rescue-alliance-foster-homes-dc03/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "I&amp;#39;m in a FOSTER HOME! If you want to meet me, email my foster parent at hrafoster.demming@gmail.com to set up..."
-    },
-    {
-      "id": 68980341,
-      "name": "Artemis",
-      "distance": 3.861,
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68980341/1/?bust=1695325145&width=600",
+      "id": 68990769,
+      "name": "Little Bear",
+      "distance": "5.1141 miles from 20008",
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68990769/3/?bust=1695399882&width=600",
       "age": "Baby",
-      "gender": "Female",
+      "gender": "Male",
       "breeds": {
-        "primary": "American Shorthair"
+        "primary": "Bombay"
       },
       "species": "Cat",
-      "url": "https://www.petfinder.com/cat/artemis-68980341/va/arlington/spca-of-northern-virginia-va91/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Artemis&amp;#39;s Personality\n\nThis adorable calico girl was named after the goddess Artemis in Greek mythology. As a goddess, she is..."
+      "url": "https://www.petfinder.com/cat/little-bear-68990769/md/mount-rainier/a-cats-life-rescue-md492/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Contrary to his name, Little Bear loves big! This cutie is the most human-loving kitten you will ever meet (probably..."
     },
     {
-      "id": 68980976,
-      "name": "Star Fire",
-      "distance": 3.2591,
-      "imageURL": "https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227724992-stock-illustration-image-available-icon-flat-vector.jpg",
-      "age": "Adult",
-      "gender": "Female",
-      "breeds": {
-        "primary": "Pit Bull Terrier"
-      },
-      "species": "Dog",
-      "url": "https://www.petfinder.com/dog/star-fire-68980976/dc/washington/humane-rescue-alliance-dc28/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "I&amp;#39;m at our Oglethorpe Street shelter! If you want to adopt me, come to 71 Oglethorpe St. NW between 12-7..."
-    },
-    {
-      "id": 68863119,
-      "name": "Rockfish",
-      "distance": 0.8411,
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68863119/2/?bust=1694637106&width=600",
+      "id": 68988726,
+      "name": "Antoinette",
+      "distance": "5.1141 miles from 20008",
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68988726/3/?bust=1695391466&width=600",
       "age": "Young",
       "gender": "Female",
       "breeds": {
-        "primary": "Domestic Short Hair"
+        "primary": "Russian Blue"
       },
       "species": "Cat",
-      "url": "https://www.petfinder.com/cat/rockfish-68863119/ak/juneau/juneau-animal-rescue-ak04/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Animal visitation is available Monday, Wednesday, Thursday, Friday &amp; Saturday from 1-5pm\n\nInterested parties can find our adoption application at:..."
+      "url": "https://www.petfinder.com/cat/antoinette-68988726/md/mount-rainier/a-cats-life-rescue-md492/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Meet the beautiful Antoinette!  She&#039;s JUST as regal if not more, as her Queen Marie namesake, and one of the..."
     },
     {
-      "id": 68862890,
-      "name": "Barbie",
-      "distance": 0.8411,
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68862890/2/?bust=1694636114&width=600",
-      "age": "Adult",
-      "gender": "Female",
-      "breeds": {
-        "primary": "Domestic Short Hair"
-      },
-      "species": "Cat",
-      "url": "https://www.petfinder.com/cat/barbie-68862890/ak/juneau/juneau-animal-rescue-ak04/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Animal visitation is available Monday, Wednesday, Thursday, Friday &amp; Saturday from 1-5pm\n\nInterested parties can find our adoption application at:..."
-    },
-    {
-      "id": 68990269,
-      "name": "Daizee",
-      "distance": 1.6085,
-      "imageURL": "https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227724992-stock-illustration-image-available-icon-flat-vector.jpg",
-      "age": "Young",
-      "gender": "Female",
-      "breeds": {
-        "primary": "Terrier"
-      },
-      "species": "Dog",
-      "url": "https://www.petfinder.com/dog/daizee-68990269/dc/washington/lucky-dog-animal-rescue-dc20/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Please contact Destiny Sibert (DestinyS@luckydoganimalrescue.org) for more information about this pet.Petite Lady Looking for Love\nDAIZEE NEEDS A FOREVER HOME!!!!..."
-    },
-    {
-      "id": 68984915,
-      "name": "Plox",
-      "distance": 1.6085,
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68984915/1/?bust=1695345062&width=600",
+      "id": 68985521,
+      "name": "TIO",
+      "distance": "7.555 miles from 90210",
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68985521/1/?bust=1695347935&width=600",
       "age": "Baby",
       "gender": "Male",
       "breeds": {
         "primary": "Domestic Short Hair"
       },
       "species": "Cat",
-      "url": "https://www.petfinder.com/cat/plox-68984915/dc/washington/lucky-dog-animal-rescue-dc20/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Handsome tabby kitten needs a forever home!PLOX NEEDS A FOREVER HOME!!!!\n\nName: Plox Best Guess for Breed: Domestic Short Hair..."
+      "url": "https://www.petfinder.com/cat/tio-68985521/ca/van-nuys/city-of-los-angeles-east-valley-animal-shelter-ca767/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": null
     }
   ]
 }

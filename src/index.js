@@ -1,6 +1,6 @@
 import { API_KEY } from "/config.js";
 import { SECRET } from "/config.js";
-// Defining text characters for the empty and full hearts (from Simple Liker lab).
+/*Defining text characters for the empty and full hearts (from Simple Liker lab). Set variables for DOM elements we use multiple times*/
 const EMPTY_HEART = "♡";
 const FULL_HEART = "♥";
 let offset = 1;
@@ -11,10 +11,10 @@ const petsContainer = document.getElementById("pets-container");
 const footer = document.getElementById("footer");
 const intro = document.getElementById("intro");
 
-//Asks for zip code
+/*Asks for zip code*/
 document.addEventListener("DOMContentLoaded", initialPrompt);
 
-//When user submits zip code, animals are fetched using that zip code
+/*When user submits zip code in search bar, animals are fetched using that zip code*/
 document
   .getElementById("search-animals")
   .addEventListener("submit", (event) => {
@@ -23,7 +23,7 @@ document
     fetchAccessToken(event, zip);
   });
 
-//event listeners for forward and backwards buttons
+/*Event listeners for forward and backwards buttons*/
 document
   .getElementById("back")
   .addEventListener("click", (event) => loadPrevious(event));
@@ -31,10 +31,12 @@ document
   .getElementById("forward")
   .addEventListener("click", (event) => loadNext(event));
 
-//event listener for toggling saved vs all animals
+/*Event listener for toggling saved vs all animals*/
 toggleBtn.addEventListener("click", toggleSaved);
 
-//function that initially prompts for zip code and fetches animals
+//-----------------------FUNCTIONS BELOW-----------------------------------//
+
+/*Function that initially prompts for zip code and fetches animals*/
 function initialPrompt() {
   const firstZip = prompt(
     "Please enter your zip code to start viewing adoptable pets:"
@@ -43,7 +45,7 @@ function initialPrompt() {
   fetchAccessToken(null, firstZip);
 }
 
-//gets the temporary access token every time you request animals, then actually fetches animals
+/*Function that gets the temporary access token to use when requesting animals from API*/
 function fetchAccessToken(event, zip) {
   return fetch("https://api.petfinder.com/v2/oauth2/token", {
     method: "POST",
@@ -53,10 +55,11 @@ function fetchAccessToken(event, zip) {
     body: `grant_type=client_credentials&client_id=${API_KEY}&client_secret=${SECRET}`,
   })
     .then((res) => res.json())
-    .then((data) => fetchAnimals(event, data.access_token, zip));
+    .then((data) => fetchAPIAnimals(event, data.access_token, zip));
 }
 
-function fetchAnimals(event, token, zip) {
+/*Function that fetches animals from API using zip code endpoint*/
+function fetchAPIAnimals(event, token, zip) {
   fetch(
     `https://api.petfinder.com/v2/animals/?location=${zip}&limit=6&distance=10&page=${offset}`,
     {
@@ -69,24 +72,22 @@ function fetchAnimals(event, token, zip) {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.animals);
-
       if (data.animals.length === 0) {
-        /*If our search/initial prompt returned no animals, tell user to try different zip.
-        event being null means that this was the initial prompt (where there's no event). Treat this like submit*/
+        //If our search/initial prompt returned no animals, tell user to try different zip.
+        //event being null means that this was the initial prompt (where there's no event). Treat this like submit.
         if (!event || event.type === "submit") {
           alert("No animals for this location. Please try another zip code.");
-        } else if (event.target.id === "forward") {
-          /*if we reached the end of the available animals, return to last seen page of results*/
+        }
+        //if we reached the end of the available animals, stay on last seen page of results.
+        else if (event.target.id === "forward") {
           alert("No more animals within this distance");
           offset--;
           console.log(`Page: ${offset}`);
-          // fetchAccessToken(zip);
         }
       } else {
         //clear current page before rendering new animals
         petsContainer.innerHTML = "";
-        data.animals.forEach(renderPet);
+        data.animals.forEach((animal) => renderPet(animal, zip));
         pageCount.innerText = `Page: ${offset}`;
       }
     });
@@ -97,14 +98,34 @@ function fetchAnimals(event, token, zip) {
   intro.innerText = "Results";
 }
 
-function renderPet(animal) {
+/*Function that displays pet on the DOM*/
+function renderPet(animal, zip) {
   const listing = document.createElement("div");
   listing.className = "pet-listing";
 
+  /*name*/
+  const name = document.createElement("h2");
+  name.innerText = animal.name;
+
+  /*top paragraph w/ distance and heart*/
+  const pTop = document.createElement("p");
+  const distance = document.createElement("span");
+  distance.innerText = zip
+    ? `${animal.distance} miles from ${zip}`
+    : animal.distance;
+  const heart = document.createElement("span");
+  //check to see if animal is saved before setting heart
+  isSaved(animal).then((saved) => {
+    heart.innerText = saved ? FULL_HEART : EMPTY_HEART;
+  });
+  heart.style.cursor = "pointer";
+  pTop.append(distance, heart);
+
+  /*picture*/
   const imgdiv = document.createElement("div");
   imgdiv.className = "imgdiv";
   const image = document.createElement("img");
-  /*checking the different possible image formats, depending on if it's a saved animal, api animal w/ photos, or api animal w/o photos*/
+  //checking the different possible image formats, depending on if it's a saved animal, api animal w/ photos, or api animal w/o photos
   if (animal.imageURL) {
     image.src = animal.imageURL;
   } else if (animal.photos.length > 0) {
@@ -115,25 +136,7 @@ function renderPet(animal) {
   }
   imgdiv.appendChild(image);
 
-  const name = document.createElement("h2");
-  name.innerText = animal.name;
-
-  const pTop = document.createElement("p");
-  const distance = document.createElement("span");
-  distance.innerText = `${animal.distance} miles`;
-  const heart = document.createElement("span");
-  //check to see if animal is saved
-  isSaved(animal).then((boolean) => {
-    if (boolean) {
-      heart.innerText = FULL_HEART;
-    } else {
-      heart.innerText = EMPTY_HEART;
-    }
-  });
-  //event listener for saving an animal
-  heart.addEventListener("click", (event) => savePet(event, animal, image));
-  pTop.append(distance, heart);
-
+  /*bottom paragraph w/ age, gender, breed, species*/
   const pBottom = document.createElement("p");
   const age = document.createElement("span");
   age.innerText = animal.age;
@@ -143,10 +146,12 @@ function renderPet(animal) {
   breed.innerText = animal.breeds.primary + ", " + animal.species;
   pBottom.append(age, gender, breed);
 
+  /*url*/
   const url = document.createElement("a");
   url.href = animal.url;
   url.innerText = "Pet's URL";
 
+  /*description*/
   const description = document.createElement("details");
   description.className = "description";
   if (animal.description) {
@@ -161,10 +166,17 @@ function renderPet(animal) {
     emphasizePet(event, listing)
   );
 
+  /*append all pet info to DOM*/
   listing.append(name, pTop, imgdiv, pBottom, url, description);
   document.getElementById("pets-container").appendChild(listing);
+
+  /*event listener for saving an animal*/
+  heart.addEventListener("click", (event) =>
+    saveUnsavePet(event, animal, listing)
+  );
 }
 
+/*Function that changes listing display when description is opened*/
 function emphasizePet(event, listing) {
   if (event.target.hasAttribute("open")) {
     listing.style.boxShadow = "3px 4px #e04b52";
@@ -173,6 +185,7 @@ function emphasizePet(event, listing) {
   }
 }
 
+/*Function that loads previous page of API results*/
 function loadPrevious(event) {
   if (offset === 1) {
     alert("No previous animals. Cannot go back further");
@@ -182,43 +195,70 @@ function loadPrevious(event) {
   }
 }
 
+/*Function that loads next page of API results*/
 function loadNext(event) {
   offset++;
   fetchAccessToken(event, searchbar.value);
 }
 
+/*Function that checks to see if animal is saved in our 'savedAnimals' database. Expect 404 errors when animal is not saved.*/
 function isSaved(animal) {
-  return fetch(`http://localhost:3000/savedanimals/${animal.id}`)
-    .then((res) => res.ok)
-    .catch((error) => res.ok);
-}
-function savePet(event, animal, image) {
-  event.target.innerText = FULL_HEART;
-  const savedAnimal = {
-    id: animal.id,
-    name: animal.name,
-    distance: animal.distance,
-    imageURL: image.src,
-    age: animal.age,
-    gender: animal.gender,
-    breeds: { primary: animal.breeds.primary },
-    species: animal.species,
-    url: animal.url,
-    description: animal.description,
-  };
-  const configObj = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(savedAnimal),
-  };
-  fetch(`http://localhost:3000/savedanimals`, configObj)
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+  return fetch(`http://localhost:3000/savedanimals/${animal.id}`).then(
+    (res) => res.ok
+  );
 }
 
+/*Function that saves or unsaves pet when clicking on the heart*/
+function saveUnsavePet(event, animal, listing) {
+  //if pet is not saved yet, save the pet to the database
+  if (event.target.innerText === EMPTY_HEART) {
+    event.target.innerText = FULL_HEART;
+    const savedAnimal = {
+      id: animal.id,
+      name: animal.name,
+      distance: listing.querySelector("span").innerText,
+      imageURL: listing.querySelector("img").src,
+      age: animal.age,
+      gender: animal.gender,
+      breeds: { primary: animal.breeds.primary },
+      species: animal.species,
+      url: animal.url,
+      description: animal.description,
+    };
+    const configObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(savedAnimal),
+    };
+    fetch(`http://localhost:3000/savedanimals`, configObj)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
+  //if pet is saved, remove the pet from the database
+  else {
+    //if we're on the saved animals page, remove pet from page. Otherwise, just change it to an empty heart.
+    if (toggleBtn.className === "saved") {
+      listing.remove();
+    } else {
+      event.target.innerText = EMPTY_HEART;
+    }
+    const configObj = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    };
+    fetch(`http://localhost:3000/savedanimals/${animal.id}`, configObj)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
+}
+
+/*Function that toggles between the results page and saved animals page*/
 function toggleSaved(event) {
   //clear page before switching animals
   petsContainer.innerHTML = "";
@@ -231,7 +271,8 @@ function toggleSaved(event) {
     fetch(`http://localhost:3000/savedanimals`)
       .then((res) => res.json())
       .then((animals) => {
-        animals.forEach(renderPet);
+        console.log(animals);
+        animals.forEach((animal) => renderPet(animal, null));
       });
   } else {
     toggleBtn.className = "all";
