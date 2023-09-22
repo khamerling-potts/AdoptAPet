@@ -15,20 +15,6 @@
       "description": "Contrary to his name, Little Bear loves big! This cutie is the most human-loving kitten you will ever meet (probably..."
     },
     {
-      "id": 68988726,
-      "name": "Antoinette",
-      "distance": "5.1141 miles from 20008",
-      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68988726/3/?bust=1695391466&width=600",
-      "age": "Young",
-      "gender": "Female",
-      "breeds": {
-        "primary": "Russian Blue"
-      },
-      "species": "Cat",
-      "url": "https://www.petfinder.com/cat/antoinette-68988726/md/mount-rainier/a-cats-life-rescue-md492/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
-      "description": "Meet the beautiful Antoinette!  She&#039;s JUST as regal if not more, as her Queen Marie namesake, and one of the..."
-    },
-    {
       "id": 68985521,
       "name": "TIO",
       "distance": "7.555 miles from 90210",
@@ -40,6 +26,48 @@
       },
       "species": "Cat",
       "url": "https://www.petfinder.com/cat/tio-68985521/ca/van-nuys/city-of-los-angeles-east-valley-animal-shelter-ca767/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": null
+    },
+    {
+      "id": 68985834,
+      "name": "Guanciale",
+      "distance": "6.2126 miles from 63130",
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68985834/1/?bust=1695353249&width=600",
+      "age": "Young",
+      "gender": "Male",
+      "breeds": {
+        "primary": "French Bulldog"
+      },
+      "species": "Dog",
+      "url": "https://www.petfinder.com/dog/guanciale-68985834/mo/st-louis/center-for-animal-rescue-and-enrichment-of-st-louis-mo760/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": null
+    },
+    {
+      "id": 68984495,
+      "name": "OMAR",
+      "distance": "3.0646 miles from 63130",
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68984495/1/?bust=1695340979&width=600",
+      "age": "Baby",
+      "gender": "Male",
+      "breeds": {
+        "primary": "Domestic Short Hair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/omar-68984495/mo/saint-louis/animal-protective-association-of-missouri-mo228/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": null
+    },
+    {
+      "id": 68992988,
+      "name": "STRAWBERRY",
+      "distance": "6.1995 miles from 63130",
+      "imageURL": "https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227724992-stock-illustration-image-available-icon-flat-vector.jpg",
+      "age": "Baby",
+      "gender": "Male",
+      "breeds": {
+        "primary": "Domestic Short Hair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/strawberry-68992988/mo/st-louis/humane-society-of-missouri-st-louis-county-mo208/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
       "description": null
     }
   ]

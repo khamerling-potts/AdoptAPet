@@ -80,22 +80,24 @@ function fetchAPIAnimals(event, token, zip) {
         }
         //if we reached the end of the available animals, stay on last seen page of results.
         else if (event.target.id === "forward") {
-          alert("No more animals within this distance");
+          alert("No more animals within 10 miles.");
           offset--;
-          console.log(`Page: ${offset}`);
         }
       } else {
         //clear current page before rendering new animals
         petsContainer.innerHTML = "";
         data.animals.forEach((animal) => renderPet(animal, zip));
+
         pageCount.innerText = `Page: ${offset}`;
+        footer.style.visibility = "visible";
+        intro.innerText = "Results";
+        toggleBtn.innerText = "See Saved Animals";
+        toggleBtn.className = "all";
       }
     });
   // .catch((error) => {
   //   console.log(error);
   // });
-  footer.style.visibility = "visible";
-  intro.innerText = "Results";
 }
 
 /*Function that displays pet on the DOM*/
@@ -168,7 +170,7 @@ function renderPet(animal, zip) {
 
   /*append all pet info to DOM*/
   listing.append(name, pTop, imgdiv, pBottom, url, description);
-  document.getElementById("pets-container").appendChild(listing);
+  petsContainer.appendChild(listing);
 
   /*event listener for saving an animal*/
   heart.addEventListener("click", (event) =>
@@ -188,7 +190,7 @@ function emphasizePet(event, listing) {
 /*Function that loads previous page of API results*/
 function loadPrevious(event) {
   if (offset === 1) {
-    alert("No previous animals. Cannot go back further");
+    alert("No previous animals. Cannot go back further.");
   } else {
     offset--;
     fetchAccessToken(event, searchbar.value);
