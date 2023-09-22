@@ -69,6 +69,34 @@
       "species": "Dog",
       "url": "https://www.petfinder.com/dog/star-fire-68980976/dc/washington/humane-rescue-alliance-dc28/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
       "description": "I&amp;#39;m at our Oglethorpe Street shelter! If you want to adopt me, come to 71 Oglethorpe St. NW between 12-7..."
+    },
+    {
+      "id": 68863119,
+      "name": "Rockfish",
+      "distance": 0.8411,
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68863119/2/?bust=1694637106&width=600",
+      "age": "Young",
+      "gender": "Female",
+      "breeds": {
+        "primary": "Domestic Short Hair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/rockfish-68863119/ak/juneau/juneau-animal-rescue-ak04/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Animal visitation is available Monday, Wednesday, Thursday, Friday &amp; Saturday from 1-5pm\n\nInterested parties can find our adoption application at:..."
+    },
+    {
+      "id": 68862890,
+      "name": "Barbie",
+      "distance": 0.8411,
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68862890/2/?bust=1694636114&width=600",
+      "age": "Adult",
+      "gender": "Female",
+      "breeds": {
+        "primary": "Domestic Short Hair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/barbie-68862890/ak/juneau/juneau-animal-rescue-ak04/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Animal visitation is available Monday, Wednesday, Thursday, Friday &amp; Saturday from 1-5pm\n\nInterested parties can find our adoption application at:..."
     }
   ]
 }

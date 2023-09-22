@@ -50,12 +50,14 @@
   width: 10vw;
   height: 10vw;
   border: 1px solid blue;
+  display: flex;
+  justify-content: center; /*horizontally centers image within imgdiv*/
+  align-items: center; /*vertically centers image within imgdiv WITHOUT stretching to fit*/
   margin: auto; /*centered img div within listing by creating equal margins on both sides*/
 }
 img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: scale-down;
 }
 details {
   margin: 1em 0px; /*default <p> margins*/

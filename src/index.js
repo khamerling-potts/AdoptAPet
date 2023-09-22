@@ -8,6 +8,9 @@ const petsContainer = document.getElementById("pets-container");
 const footer = document.getElementById("footer");
 const intro = document.getElementById("intro");
 
+//Asks for zip code
+document.addEventListener("DOMContentLoaded", initialPrompt);
+
 //When user submits zip code, animals are fetched using that zip code
 document
   .getElementById("search-animals")
@@ -29,13 +32,13 @@ document
 toggleBtn.addEventListener("click", toggleSaved);
 
 //function that initially prompts for zip code and fetches animals
-// function initialPrompt() {
-//   const firstZip = prompt(
-//     "Please enter your zip code to start viewing adoptable pets:"
-//   );
-//   searchbar.value = firstZip;
-//   fetchAccessToken(null, firstZip);
-// }
+function initialPrompt() {
+  const firstZip = prompt(
+    "Please enter your zip code to start viewing adoptable pets:"
+  );
+  searchbar.value = firstZip;
+  fetchAccessToken(null, firstZip);
+}
 
 //gets the temporary access token every time you request animals, then actually fetches animals
 function fetchAccessToken(event, zip) {
