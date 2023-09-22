@@ -1,5 +1,8 @@
 import { API_KEY } from "/config.js";
 import { SECRET } from "/config.js";
+// Defining text characters for the empty and full hearts (from Simple Liker lab).
+const EMPTY_HEART = "♡";
+const FULL_HEART = "♥";
 let offset = 1;
 const searchbar = document.getElementById("zip");
 const pageCount = document.getElementById("page");
@@ -119,7 +122,14 @@ function renderPet(animal) {
   const distance = document.createElement("span");
   distance.innerText = `${animal.distance} miles`;
   const heart = document.createElement("span");
-  heart.innerText = `Save Pet`; //change to heart
+  //check to see if animal is saved
+  isSaved(animal).then((boolean) => {
+    if (boolean) {
+      heart.innerText = FULL_HEART;
+    } else {
+      heart.innerText = EMPTY_HEART;
+    }
+  });
   //event listener for saving an animal
   heart.addEventListener("click", (event) => savePet(event, animal, image));
   pTop.append(distance, heart);
@@ -177,8 +187,13 @@ function loadNext(event) {
   fetchAccessToken(event, searchbar.value);
 }
 
+function isSaved(animal) {
+  return fetch(`http://localhost:3000/savedanimals/${animal.id}`)
+    .then((res) => res.ok)
+    .catch((error) => res.ok);
+}
 function savePet(event, animal, image) {
-  console.log("savedpet triggered");
+  event.target.innerText = FULL_HEART;
   const savedAnimal = {
     id: animal.id,
     name: animal.name,

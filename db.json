@@ -97,6 +97,34 @@
       "species": "Cat",
       "url": "https://www.petfinder.com/cat/barbie-68862890/ak/juneau/juneau-animal-rescue-ak04/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
       "description": "Animal visitation is available Monday, Wednesday, Thursday, Friday &amp; Saturday from 1-5pm\n\nInterested parties can find our adoption application at:..."
+    },
+    {
+      "id": 68990269,
+      "name": "Daizee",
+      "distance": 1.6085,
+      "imageURL": "https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227724992-stock-illustration-image-available-icon-flat-vector.jpg",
+      "age": "Young",
+      "gender": "Female",
+      "breeds": {
+        "primary": "Terrier"
+      },
+      "species": "Dog",
+      "url": "https://www.petfinder.com/dog/daizee-68990269/dc/washington/lucky-dog-animal-rescue-dc20/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Please contact Destiny Sibert (DestinyS@luckydoganimalrescue.org) for more information about this pet.Petite Lady Looking for Love\nDAIZEE NEEDS A FOREVER HOME!!!!..."
+    },
+    {
+      "id": 68984915,
+      "name": "Plox",
+      "distance": 1.6085,
+      "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/68984915/1/?bust=1695345062&width=600",
+      "age": "Baby",
+      "gender": "Male",
+      "breeds": {
+        "primary": "Domestic Short Hair"
+      },
+      "species": "Cat",
+      "url": "https://www.petfinder.com/cat/plox-68984915/dc/washington/lucky-dog-animal-rescue-dc20/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+      "description": "Handsome tabby kitten needs a forever home!PLOX NEEDS A FOREVER HOME!!!!\n\nName: Plox Best Guess for Breed: Domestic Short Hair..."
     }
   ]
 }
