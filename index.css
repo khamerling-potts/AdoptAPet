@@ -1,3 +1,6 @@
+body {
+  height: 100vh;
+}
 #header {
   text-align: center;
   border: 2px solid black;
@@ -5,7 +8,6 @@
 #footer {
   visibility: hidden;
   border: 2px solid black;
-  height: 5vw;
   text-align: center;
   display: grid;
   grid-template-columns: 20% 40% 20%;
@@ -16,7 +18,7 @@
 #forward,
 #page {
   height: 100%;
-  font-size: 70px;
+  font-size: 60px;
 }
 #back:before,
 #forward:before {
@@ -32,23 +34,26 @@
   justify-items: center; /*centers pet info horizontally within listing*/
   align-content: space-evenly;
   align-items: center; /*centers listings vertically within pets container*/
+  gap: 1rem;
+  padding: 1rem;
 }
 .pet-listing {
   text-align: center;
   justify-items: center;
   border: grey solid 1px;
   width: 90%;
-  /* padding: 1rem;
-  width: 15rem;
-  height: 25rem; */
-  /* display: inline-grid; */
-  margin: 1rem 2rem;
   box-shadow: 3px 4px grey;
-  /*#e04b52*/
+}
+.ptop,
+.pbottom {
+  display: flex;
+  /* grid-template-columns: 70% 30%; */
+  justify-content: space-around;
 }
 .imgdiv {
-  width: 10vw;
-  height: 10vw;
+  aspect-ratio: 1/1;
+  width: 50%;
+  max-height: 50%;
   border: 1px solid blue;
   display: flex;
   justify-content: center; /*horizontally centers image within imgdiv*/

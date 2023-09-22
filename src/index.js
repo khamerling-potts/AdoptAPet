@@ -112,16 +112,19 @@ function renderPet(animal, zip) {
 
   /*top paragraph w/ distance and heart*/
   const pTop = document.createElement("p");
+  pTop.className = "ptop";
   const distance = document.createElement("span");
   distance.innerText = zip
     ? `${animal.distance} miles from ${zip}`
     : animal.distance;
+  distance.className = "distance";
   const heart = document.createElement("span");
   //check to see if animal is saved before setting heart
   isSaved(animal).then((saved) => {
     heart.innerText = saved ? FULL_HEART : EMPTY_HEART;
   });
   heart.style.cursor = "pointer";
+  heart.className = "heart";
   pTop.append(distance, heart);
 
   /*picture*/
@@ -141,6 +144,7 @@ function renderPet(animal, zip) {
 
   /*bottom paragraph w/ age, gender, breed, species*/
   const pBottom = document.createElement("p");
+  pBottom.className = "pbottom";
   const age = document.createElement("span");
   age.innerText = animal.age;
   const gender = document.createElement("span");
