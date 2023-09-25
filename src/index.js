@@ -208,11 +208,19 @@ function loadNext(event) {
   fetchAccessToken(event, searchbar.value);
 }
 
-/*Function that checks to see if animal is saved in our 'savedAnimals' database. Expect 404 errors when animal is not saved.*/
-function isSaved(animal) {
-  return fetch(`https://adoptapet.onrender.com/savedanimals/${animal.id}`).then(
-    (res) => res.ok
-  );
+/*Function that checks to see if pet is saved in our 'savedAnimals' database.*/
+function isSaved(pet) {
+  let savedIds = [];
+  return fetch(`https://adoptapet.onrender.com/savedanimals`)
+    .then((res) => res.json())
+    .then((animals) => {
+      savedIds = animals.map((animal) => animal.id);
+      return savedIds.includes(pet.id);
+    });
+  // Alternate approach below. Fewer lines of code but this produces unsightly errors in the console.
+  // return fetch(`https://adoptapet.onrender.com/savedanimals/${animal.id}`).then(
+  //   (res) => res.ok
+  // );
 }
 
 /*Function that saves or unsaves pet when clicking on the heart*/

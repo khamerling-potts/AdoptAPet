@@ -64,6 +64,8 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
-details {
+details,
+.ptop,
+.pbottom {
   margin: 1em 0px; /*default <p> margins*/
 }
