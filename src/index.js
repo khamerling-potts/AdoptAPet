@@ -91,7 +91,7 @@ function fetchAPIAnimals(event, token, zip) {
 
         pageCount.innerText = `Page: ${offset}`;
         footer.style.visibility = "visible";
-        intro.innerText = "Results";
+        intro.innerText = "AdoptAPet - Find Animals";
         toggleBtn.innerText = "See Saved Animals";
         toggleBtn.className = "all";
       }
@@ -107,7 +107,7 @@ function renderPet(animal, zip) {
   listing.className = "pet-listing";
 
   /*name*/
-  const name = document.createElement("h2");
+  const name = document.createElement("h3");
   name.innerText = animal.name;
 
   /*top paragraph w/ distance and heart*/
@@ -150,7 +150,7 @@ function renderPet(animal, zip) {
   const gender = document.createElement("span");
   gender.innerText = animal.gender;
   const breed = document.createElement("span");
-  breed.innerText = animal.breeds.primary + ", " + animal.species;
+  breed.innerText = animal.breeds.primary + " (" + animal.species + ")";
   pBottom.append(age, gender, breed);
 
   /*url*/
@@ -186,7 +186,7 @@ function renderPet(animal, zip) {
 /*Function that changes listing display when description is opened*/
 function emphasizePet(event, listing) {
   if (event.target.hasAttribute("open")) {
-    listing.style.boxShadow = "3px 4px #e04b52";
+    listing.style.boxShadow = "3px 4px #d485ae";
   } else {
     listing.style.boxShadow = "3px 4px grey";
   }
@@ -280,7 +280,7 @@ function toggleSaved(event) {
   if (toggleBtn.className === "all") {
     toggleBtn.className = "saved";
     toggleBtn.innerText = "Return to Results";
-    intro.innerText = "Saved Animals";
+    intro.innerText = "AdoptAPet - Your Saved Animals";
     //hide footer bar when on saved animals (not implementing page functionality for db.json yet)
     footer.style.visibility = "hidden";
     fetch(`https://adoptapet.onrender.com/savedanimals`)

@@ -1,24 +1,42 @@
 body {
   height: 100vh;
 }
-#header {
+header {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  border: 2px solid black;
+  border: 2px solid darkgray;
+  background-color: #ffee93;
+}
+#toggle-saved {
+  width: 10vw;
+  align-self: center;
+  margin: 0.83em; /*default h3 margin*/
+  background-color: #79addc;
+}
+#submit {
+  background-color: #79addc;
 }
 #footer {
   visibility: hidden;
-  border: 2px solid black;
+  border: 2px solid darkgray;
+  background-color: #ffee93;
   text-align: center;
-  display: grid;
+  display: flex;
   grid-template-columns: 20% 40% 20%;
   justify-content: space-evenly;
-  align-content: space-evenly;
+  align-content: center;
 }
 #back,
-#forward,
+#forward {
+  margin: 1vh;
+  width: 20%;
+  font-size: 40px;
+  background-color: #79addc;
+}
 #page {
-  height: 100%;
   font-size: 60px;
+  align-content: center;
 }
 #back:before,
 #forward:before {
@@ -27,7 +45,6 @@ body {
   vertical-align: middle;
 }
 #pets-container {
-  border: 2px solid black;
   display: grid;
   grid-template-columns: 20% 20% 20%;
   justify-content: space-evenly; /*centers listings horizontally within pets container by creating equal space between them. DONT USE GAPS W THIS*/
@@ -36,36 +53,59 @@ body {
   align-items: center; /*centers listings vertically within pets container*/
   gap: 1rem;
   padding: 1rem;
+  background-color: white;
 }
 .pet-listing {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   justify-items: center;
   border: grey solid 1px;
-  width: 90%;
-  box-shadow: 3px 4px grey;
+  background-color: #fbf3fe;
+  width: 100%;
+  max-height: 100%;
+  box-shadow: 3px 4px gray;
 }
-.ptop,
-.pbottom {
+.ptop {
   display: flex;
   /* grid-template-columns: 70% 30%; */
   justify-content: space-around;
+  align-items: center;
+}
+.pbottom {
+  display: grid;
+  grid-template-columns: 20% 20% 60%;
+}
+.pbottom span:nth-child(-n + 2) {
+  display: flex;
+  justify-content: left;
+  padding-left: 0.83em;
+}
+.pbottom span:nth-last-child(-n + 1) {
+  display: flex;
+  justify-content: right;
+  padding-right: 0.83em;
+}
+.heart {
+  font-size: larger;
 }
 .imgdiv {
   aspect-ratio: 1/1;
-  width: 50%;
-  max-height: 50%;
-  border: 1px solid blue;
+  /* max-width: 50%; */
+  height: 17vh;
+  border: 2px solid #79addc;
+  background-color: white;
   display: flex;
   justify-content: center; /*horizontally centers image within imgdiv*/
   align-items: center; /*vertically centers image within imgdiv WITHOUT stretching to fit*/
   margin: auto; /*centered img div within listing by creating equal margins on both sides*/
+  margin-bottom: 1em;
 }
 img {
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
 }
-details,
-.ptop,
-.pbottom {
-  margin: 1em 0px; /*default <p> margins*/
+details {
+  margin-top: 1em; /*default <p> margins*/
 }

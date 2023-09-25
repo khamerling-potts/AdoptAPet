@@ -6,3 +6,5 @@ Please note that when using live server, the dialog may not appear if it opens i
 when rendering animals, it's normal to see 404 errors in the console. This is because we check to see if an animal is saved, which requires attempting to fetch unsaved animals from our saved animals database.
 
 //reset page count when searching new animals
+
+when searching a zip code that doesnt have animals, the search bar should go back to what it used to be so you can go to next page
