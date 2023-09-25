@@ -210,7 +210,7 @@ function loadNext(event) {
 
 /*Function that checks to see if animal is saved in our 'savedAnimals' database. Expect 404 errors when animal is not saved.*/
 function isSaved(animal) {
-  return fetch(`http://localhost:3000/savedanimals/${animal.id}`).then(
+  return fetch(`https://adoptapet.onrender.com/savedanimals/${animal.id}`).then(
     (res) => res.ok
   );
 }
@@ -240,7 +240,7 @@ function saveUnsavePet(event, animal, listing) {
       },
       body: JSON.stringify(savedAnimal),
     };
-    fetch(`http://localhost:3000/savedanimals`, configObj)
+    fetch(`https://adoptapet.onrender.com/savedanimals`, configObj)
       .then((res) => res.json())
       .then((data) => console.log(data));
   }
@@ -259,7 +259,7 @@ function saveUnsavePet(event, animal, listing) {
         Accept: "application/json",
       },
     };
-    fetch(`http://localhost:3000/savedanimals/${animal.id}`, configObj)
+    fetch(`https://adoptapet.onrender.com/savedanimals/${animal.id}`, configObj)
       .then((res) => res.json())
       .then((data) => console.log(data));
   }
@@ -275,7 +275,7 @@ function toggleSaved(event) {
     intro.innerText = "Saved Animals";
     //hide footer bar when on saved animals (not implementing page functionality for db.json yet)
     footer.style.visibility = "hidden";
-    fetch(`http://localhost:3000/savedanimals`)
+    fetch(`https://adoptapet.onrender.com/savedanimals`)
       .then((res) => res.json())
       .then((animals) => {
         console.log(animals);
