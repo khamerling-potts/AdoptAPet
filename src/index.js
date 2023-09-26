@@ -103,9 +103,6 @@ function fetchAPIAnimals(event, token, zip) {
         toggleBtn.className = "all";
       }
     });
-  // .catch((error) => {
-  //   console.log(error);
-  // });
 }
 
 /*Function that displays pet on the DOM*/

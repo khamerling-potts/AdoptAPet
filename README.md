@@ -6,6 +6,8 @@
 
 This project can be run using VSCode's [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension. Please note that when launching Live Server, the initial dialog prompting for a zip code may not appear if AdoptAPet opens in a non-active window (like a second monitor). Refresh the page if this happens.
 
+> A quick note about Live Server - I added `"liveServer.settings.ignoreFiles": ["**/**"]` to my settings.json file to prevent the page from refreshing with every save.
+
 ## Description
 
 AdoptAPet is a front end application that accesses data from the [Petfinder API](https://www.petfinder.com/developers/v2/docs/) and manipulates data in an [AdoptAPet JSON server](https://adoptapet.onrender.com/savedanimals) deployed by [render](https://render.com/).
@@ -45,6 +47,6 @@ The button under the search bar allows users to toggle between their saved anima
 
 ## Future additions
 
-I hope to add additional functionality to this project by eventually implementing more search filters, including filtering by breed and by distance.
+I hope to add additional functionality to this project by implementing more search filters, including filtering by breed and by distance.
 
 I would also like to eventually add a page/offset endpoint in my JSON Server. This would allow me to implement page navigation buttons and only display 6 saved animals at a time.
