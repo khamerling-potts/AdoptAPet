@@ -30,6 +30,13 @@ Here is an example animal in the JSON server:
 
 The button under the search bar allows users to toggle between their saved animals and search results. In addition to saving an animal, you can unsave an animal by clicking on the heart again. This removes the animal from the AdoptAPet JSON server and updates the DOM accordingly.
 
+#### Various edge cases were accounted for:
+
+- When on page 1 of the search results, users are prevented from going back another page.
+- If users reach the end of the available animals, they are prevented from moving forward another page.
+- If a user moves between saved animals and search results without looking up a new zip code, the page count is maintained. This means users will be on the same page of results when they return to the results page.
+- If a zip code returns no animals, users are alerted and the DOM remains the way it was from the last successful search.
+
 ## Requirements
 
 **This project uses a free API key and Secret associated with my Petfinder account.** These are stored in a config.js file that is ignored by git. In order to fetch a temporary access token and access Petfinder data, you need the config.js file storing the protected keys.
