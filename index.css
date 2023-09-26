@@ -68,33 +68,20 @@ header {
 }
 .ptop {
   display: flex;
-  /* grid-template-columns: 70% 30%; */
   justify-content: space-around;
   align-items: center;
 }
 .pbottom {
-  /* display: grid;
-  grid-template-columns: 40% 60%; */
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-/* .pbottom span:nth-child(-n + 2) {
-  display: flex;
-  justify-content: left;
-  padding-left: 0.83em;
-}
-.pbottom span:nth-last-child(-n + 1) {
-  display: flex;
-  justify-content: right;
-  padding-right: 0.83em;
-} */
+
 .heart {
   font-size: larger;
 }
 .imgdiv {
   aspect-ratio: 1/1;
-  /* max-width: 50%; */
   height: 17vh;
   border: 2px solid #79addc;
   background-color: white;
