@@ -8,7 +8,27 @@ AdoptAPet is a front end application that accesses data from the [Petfinder API]
 
 Users are able to search for adoptable pets within 10 miles of their zip code. 6 animals display on the screen and users can navigate between result pages to see additional/previous animals. Each listing includes the animal's name, distance, photo (if available), age, gender, breed, Petfinder URL, and description (if provided).
 
-Another key feature of AdoptAPet is the ability to save animals by clicking on the heart in their listing. When users save an animal, the heart fills in (visually indicating they were saved) and the animal is added to the AdoptAPet JSON server database. The button under the search bar allows users to toggle between their saved animals and search results. In addition to saving an animal, you can unsave an animal by clicking on the heart again. This removes the animal from the AdoptAPet JSON server and updates the DOM accordingly.
+Another key feature of AdoptAPet is the ability to save animals by clicking on the heart in their listing. When users save an animal, the heart fills in (visually indicating they were saved) and the animal is added to the AdoptAPet JSON server database.
+Here is an example animal in the JSON server:
+
+```
+{
+    "id": 60377948,
+    "name": "Tommy",
+    "distance": "6.7271 miles from 99567",
+    "imageURL": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60377948/1/?bust=1677879146&width=600",
+    "age": "Baby",
+    "gender": "Male",
+    "breeds": {
+      "primary": "Short-Haired"
+    },
+    "species": "Guinea Pig",
+    "url": "https://www.petfinder.com/small-furry/tommy-60377948/ak/eagle-river/junipers-guinea-pig-rescue-ak81/?referrer_id=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13&utm_source=api&utm_medium=partnership&utm_content=e26ce9e6-9efe-4ab7-8f9e-6572fadc0a13",
+    "description": "A sweet young boy that was thought to be a girl piggy. He is super soft and is used to..."
+  }
+```
+
+The button under the search bar allows users to toggle between their saved animals and search results. In addition to saving an animal, you can unsave an animal by clicking on the heart again. This removes the animal from the AdoptAPet JSON server and updates the DOM accordingly.
 
 ## Requirements
 
