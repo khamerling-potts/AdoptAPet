@@ -4,6 +4,7 @@ import { SECRET } from "/config.js";
 const EMPTY_HEART = "♡";
 const FULL_HEART = "♥";
 let offset = 1;
+let lastGoodZip = "";
 const searchbar = document.getElementById("zip");
 const pageCount = document.getElementById("page");
 const toggleBtn = document.getElementById("toggle-saved");
@@ -74,10 +75,14 @@ function fetchAPIAnimals(event, token, zip) {
     .then((res) => res.json())
     .then((data) => {
       if (data.animals.length === 0) {
-        //If our search/initial prompt returned no animals, tell user to try different zip.
-        //event being null means that this was the initial prompt (where there's no event). Treat this like submit.
+        //If our search/initial prompt returned no animals, tell user to try different zip. Maintain page offset.
+        //event being null means that this was the initial prompt. Keep search bar empty in this case.
         if (!event || event.type === "submit") {
           alert("No animals for this location. Please try another zip code.");
+          searchbar.value = lastGoodZip;
+          if (footer.style.visibility === "visible") {
+            offset = parseInt(pageCount.innerText.replace("Page: ", ""), 10);
+          }
         }
         //if we reached the end of the available animals, stay on last seen page of results.
         else if (event.target.id === "forward") {
@@ -86,6 +91,7 @@ function fetchAPIAnimals(event, token, zip) {
         }
       } else {
         //clear current page before rendering new animals
+        lastGoodZip = zip;
         petsContainer.innerHTML = "";
         data.animals.forEach((animal) => renderPet(animal, zip));
 
@@ -145,13 +151,11 @@ function renderPet(animal, zip) {
   /*bottom paragraph w/ age, gender, breed, species*/
   const pBottom = document.createElement("p");
   pBottom.className = "pbottom";
-  const age = document.createElement("span");
-  age.innerText = animal.age;
-  const gender = document.createElement("span");
-  gender.innerText = animal.gender;
+  const ageGender = document.createElement("span");
+  ageGender.innerText = `${animal.age} • ${animal.gender}`;
   const breed = document.createElement("span");
   breed.innerText = animal.breeds.primary + " (" + animal.species + ")";
-  pBottom.append(age, gender, breed);
+  pBottom.append(ageGender, breed);
 
   /*url*/
   const url = document.createElement("a");

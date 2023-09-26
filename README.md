@@ -8,3 +8,4 @@ when rendering animals, it's normal to see 404 errors in the console. This is be
 //reset page count when searching new animals
 
 when searching a zip code that doesnt have animals, the search bar should go back to what it used to be so you can go to next page
+consider just putting dots between pbottom info instead of flexing

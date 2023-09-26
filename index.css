@@ -73,10 +73,13 @@ header {
   align-items: center;
 }
 .pbottom {
-  display: grid;
-  grid-template-columns: 20% 20% 60%;
+  /* display: grid;
+  grid-template-columns: 40% 60%; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.pbottom span:nth-child(-n + 2) {
+/* .pbottom span:nth-child(-n + 2) {
   display: flex;
   justify-content: left;
   padding-left: 0.83em;
@@ -85,7 +88,7 @@ header {
   display: flex;
   justify-content: right;
   padding-right: 0.83em;
-}
+} */
 .heart {
   font-size: larger;
 }
