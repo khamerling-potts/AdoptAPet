@@ -292,7 +292,6 @@ function toggleSaved(event) {
     fetch(`https://adoptapet.onrender.com/savedanimals`)
       .then((res) => res.json())
       .then((animals) => {
-        console.log(animals);
         animals.forEach((animal) => renderPet(animal, null));
       });
   } else {
