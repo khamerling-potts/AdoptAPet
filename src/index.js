@@ -1,5 +1,6 @@
 import { API_KEY } from "/config.js";
 import { SECRET } from "/config.js";
+
 /*Defining text characters for the empty and full hearts (from Simple Liker lab). Set variables for DOM elements we use multiple times*/
 const EMPTY_HEART = "♡";
 const FULL_HEART = "♥";
@@ -125,7 +126,8 @@ function renderPet(animal, zip) {
     : animal.distance;
   distance.className = "distance";
   const heart = document.createElement("span");
-  //check to see if animal is saved before setting heart
+  heart.innerText = EMPTY_HEART;
+  //check to see if animal is saved before finalizing heart
   isSaved(animal).then((saved) => {
     heart.innerText = saved ? FULL_HEART : EMPTY_HEART;
   });
