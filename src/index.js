@@ -123,7 +123,7 @@ function renderPet(animal, zip) {
     : animal.distance;
   distance.className = "distance";
   const heart = document.createElement("span");
-  heart.innerText = EMPTY_HEART;
+  // heart.innerText = EMPTY_HEART;
   //check to see if animal is saved before finalizing heart
   isSaved(animal).then((saved) => {
     heart.innerText = saved ? FULL_HEART : EMPTY_HEART;
