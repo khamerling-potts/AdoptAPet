@@ -16,7 +16,13 @@ AdoptAPet is a front end application that accesses data from the [Petfinder API]
 
 Users are able to search for adoptable pets within 10 miles of their zip code. 6 animals display on the screen and users can navigate between result pages to see additional/previous animals. Each listing includes the animal's name, distance, photo (if available), age, gender, breed, Petfinder URL, and description (if provided).
 
+![gif1](https://github.com/khamerling-potts/phase-1-project/assets/54592576/85d036d0-b625-4537-8a6f-04fe742d8c79)
+
+
 Another key feature of AdoptAPet is the ability to save animals by clicking on the heart in their listing. When users save an animal, the heart fills in (visually indicating they were saved) and the animal is added to the AdoptAPet JSON server database.
+
+![gif2](https://github.com/khamerling-potts/phase-1-project/assets/54592576/247672fa-c931-495e-96dd-1e551c03e02e)
+
 Here is an example animal in the JSON server:
 
 ```JSON
