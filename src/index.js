@@ -14,7 +14,7 @@ const footer = document.getElementById("footer");
 const intro = document.getElementById("intro");
 
 /*Asks for zip code*/
-document.addEventListener("DOMContentLoaded", initialPrompt);
+initialPrompt();
 
 /*When user submits zip code in search bar, animals are fetched using that zip code*/
 document
@@ -105,6 +105,14 @@ function fetchAPIAnimals(event, token, zip) {
     });
 }
 
+function fetchSavedAnimals() {
+  fetch(`https://adoptapet.onrender.com/savedanimals`)
+    .then((res) => res.json())
+    .then((animals) => {
+      animals.forEach((animal) => renderPet(animal, null));
+    });
+}
+
 /*Function that displays pet on the DOM*/
 function renderPet(animal, zip) {
   const listing = document.createElement("div");
@@ -123,10 +131,13 @@ function renderPet(animal, zip) {
     : animal.distance;
   distance.className = "distance";
   const heart = document.createElement("span");
-  // heart.innerText = EMPTY_HEART;
   //check to see if animal is saved before finalizing heart
   isSaved(animal).then((saved) => {
     heart.innerText = saved ? FULL_HEART : EMPTY_HEART;
+    /*event listener for saving an animal*/
+    heart.addEventListener("click", (event) =>
+      saveUnsavePet(event, animal, listing)
+    );
   });
   heart.style.cursor = "pointer";
   heart.className = "heart";
@@ -179,11 +190,6 @@ function renderPet(animal, zip) {
   /*append all pet info to DOM*/
   listing.append(name, pTop, imgdiv, pBottom, url, description);
   petsContainer.appendChild(listing);
-
-  /*event listener for saving an animal*/
-  heart.addEventListener("click", (event) =>
-    saveUnsavePet(event, animal, listing)
-  );
 }
 
 /*Function that changes listing display when description is opened*/
@@ -284,13 +290,9 @@ function toggleSaved(event) {
     toggleBtn.className = "saved";
     toggleBtn.innerText = "Return to Results";
     intro.innerText = "AdoptAPet - Your Saved Animals";
-    //hide footer bar when on saved animals (not implementing page functionality for db.json yet)
+    //hide footer bar when on saved animals (not implementing page functionality for json server yet)
     footer.style.visibility = "hidden";
-    fetch(`https://adoptapet.onrender.com/savedanimals`)
-      .then((res) => res.json())
-      .then((animals) => {
-        animals.forEach((animal) => renderPet(animal, null));
-      });
+    fetchSavedAnimals();
   } else {
     fetchAccessToken(event, searchbar.value);
   }
