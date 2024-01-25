@@ -1,4 +1,4 @@
-# AdoptAPet - Flatiron School Phase 1 Project
+# AdoptAPet - Adoptable Pets Browser and Manager
 
 ## Getting Started - Requirements
 
@@ -39,7 +39,7 @@ Here is an example animal in the JSON server:
 
 The button under the search bar allows users to toggle between their saved animals and search results. In addition to saving an animal, you can unsave an animal by clicking on the heart again. This removes the animal from the AdoptAPet JSON server and updates the DOM accordingly.
 
-Quick demo: 
+Quick demo:
 ![project gif](https://github.com/khamerling-potts/phase-1-project/assets/54592576/5cefdc2c-e03e-43a2-b246-230b5d6e883a)
 
 #### Various edge cases were accounted for:

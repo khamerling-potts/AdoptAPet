@@ -105,6 +105,7 @@ function fetchAPIAnimals(event, token, zip) {
     });
 }
 
+/*Function that fetches saved animals using JSON server*/
 function fetchSavedAnimals() {
   fetch(`https://adoptapet.onrender.com/savedanimals`)
     .then((res) => res.json())
